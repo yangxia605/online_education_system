@@ -15,7 +15,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/eduservice/teacher")
 public class EduTeacherController {
-    // 把service注入
+////     把service注入
+
     @Autowired
     private EduTeacherService teacherService;
     // 1.查询讲师表所有数据
@@ -32,15 +33,15 @@ public class EduTeacherController {
         return R.ok().data("items",list);
 
     }
-
-    //2 逻辑删除讲师的方法
-    @DeleteMapping({"id"})
-    public R removeTeacher(@ApiParam(name="id",value = "讲师Id",required = true) @PathVariable String id){
-        boolean flag =  teacherService.removeById(id);
-        if(flag){
-            return R.ok();
-        }else {
-            return R.error();
-        }
-    }
+//
+//    //2 逻辑删除讲师的方法
+//    @DeleteMapping({"id"})
+//    public R removeTeacher(@ApiParam(name="id",value = "讲师Id",required = true) @PathVariable String id){
+//        boolean flag =  teacherService.removeById(id);
+//        if(flag){
+//            return R.ok();
+//        }else {
+//            return R.error();
+//        }
+//    }
 }
